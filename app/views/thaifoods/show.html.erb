@@ -15,14 +15,13 @@
       <% @thaifood.comments.each do |comment| %>
         <p>
           <%= comment.body %><br>
-          <small><%=  %><%= comment.created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p") if comment.created_at %> <%= current_user.username %></small>
+          <small><%=  %><%= comment.created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p") if comment.created_at %> <%= comment.user.username if comment.user %></small>
         </p>
       <% end %>
 
       <h5>Add a comment:</h5>
       <%= form_for [@thaifood, @new_comment] do |f| %>
-        <%= f.text_area :body, class:'form-control comment' %>
-        
+        <%= f.text_area :body, class:'form-control comment' %>        
 <!-- 
         <%= f.fields_for :user_attributes do |x| %>
         <%= x.text_field :username %>
