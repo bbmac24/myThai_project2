@@ -8,13 +8,13 @@ class UsersController < ApplicationController
 	end 
 
 	def create
-		@user = User.new(params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation)) 
+		@user = User.new(params.require(:user).permit(:firstname, :lastname, :username, :email, :password, :password_confirmation, :tagline)) 
 
 		if @user.save
-			redirect_to root_path
+			session[:user_id] = @user.id.to_s
+			redirect_to thaifoods_path
 		else
 	 		render :new
 	 	end 
 	 end 
-
 end 

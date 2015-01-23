@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
 		if u && u.authenticate(params[:user][:password])
 			session[:user_id] = u.id.to_s
-			redirect_to root_path
+			redirect_to thaifoods_path
 		else 
 			render :new
 		end 

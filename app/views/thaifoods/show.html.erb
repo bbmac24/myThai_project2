@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <h2 class="left"></h2>
+    <hr>
+           
+    <p><%= image_tag @thaifood.photo.url %>
+    <p><%= @thaifood.dish %> @
+    <%= @thaifood.restaurant %></p>
+    <p><%= @thaifood.location %></p>
+    <hr>
+    <div>
+      <h4>Comments:</h4>
+      <% @thaifood.comments.each do |comment| %>
+        <p>
+          <%= comment.body %><br>
+          <small><%=  %><%= comment.created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p") if comment.created_at %> <%= current_user.username %></small>
+        </p>
+      <% end %>
+
+      <h5>Add a comment:</h5>
+      <%= form_for [@thaifood, @new_comment] do |f| %>
+        <%= f.text_area :body, class:'form-control comment' %>
+        
+<!-- 
+        <%= f.fields_for :user_attributes do |x| %>
+        <%= x.text_field :username %>
+        <%= x.text_field :tagline %> -->
+
+        <%= f.submit "Submit", class:'btn btn-sm btn-primary comment' %><small> <%= current_user.username %></small>
+      <% end %>
+      <% end %>
+
+    </div>
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>
+

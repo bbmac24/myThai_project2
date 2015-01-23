@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Espn</title>
+  <title>Welcome to myThai</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <div class="container-fluid">
+<div class='pull-right'>
+    <% if current_user %>
+      <%= current_user.username %> | <%= link_to "Logout", logout_path %>
+    <% else %>
+      <%= link_to "Login", login_path %> | <%= link_to "Signup", signup_path %>
+    <% end %>
+  </div>
 
-<%= yield %>
+<!-- look up "clear both" -->
 
+<div class="row">
+  <div class="col-md-3">user info goes here</div>
+  <div class="col-md-9">
+    <%= yield %>
+  </div>
 </div>
 
+</div>
 </body>
 </html>

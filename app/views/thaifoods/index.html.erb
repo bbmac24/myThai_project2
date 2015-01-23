@@ -1,0 +1,29 @@
+<h4><%= link_to 'Add a New Dish!', new_thaifood_path %></h4>
+
+<table>
+
+  <thead>
+    <th>Dish</th>
+    <th>Location</th>
+    <th>Restaurant</th>
+    <th>Dish Price</th>
+  </thead>
+  
+  <% if @thaifoods  %>
+
+  <tbody>
+    <% @thaifoods.each do |i| %>
+    <tr>
+       <td><%= image_tag i.photo.url(:small), alt: "#{i.dish.downcase}image", width: '100' %></td>   
+      <td><%= i.dish.downcase %></td>
+      <td><%= i.location %> </td>
+      <td><%= i.restaurant %></td>
+      <td>$<%= i.price_per_dish %></td>
+      <td><%= link_to 'Edit', edit_thaifood_path(i) %> | <%= button_to 'X', i, method: :delete %> </td>
+      <td><%= link_to "Comment this!", i %></td>
+      <small><%= "Posted: #{i.date_published}" if i.created_at %></small>
+     </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table> 

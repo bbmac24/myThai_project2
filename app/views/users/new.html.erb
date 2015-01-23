@@ -1,41 +1,18 @@
-This is the signup page!
+Sign Up Page!
 
-<h1>You got this!</h1>
+<h1>..awesome food ahead!</h1>
 
-<ul>
-<% @user.errors.full_messages.each do |message| %>
-<li><%= message %></li>
-<% end %>
-</ul>
-
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img data-src="holder.js/300x300" alt="...">
-      <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-
+<%= @user.errors.inspect %>
 <%= form_for(@user) do |f|%>
-	email: 
-	<%= f.text_field :email %>
 
-	firstname: 
-	<%= f.text_field :firstname %>
+  Email: <%= f.text_field :email %><br>
+  First Name: <%= f.text_field :firstname %><br>
+  Lastname: <%= f.text_field :lastname %><br>
+  Username: <%= f.text_field :username %><br> 
+  Password: <%= f.password_field :password %><br>
+  Please confirm your password:
+    <%= f.password_field :password_confirmation %> <br>
+  Your Inner ThaiFood Shoutout!: <%= f.text_field :tagline %><br> 
+  <%= f.submit "Signup!" %>
 
-	lastname: 
-	<%= f.text_field :lastname %>
-
-	password:
-	<%= f.password_field :password %>
-    
-    confirm your password:
-    <%= f.password_field :password_confirmation %>
-
-	<%= f.submit "Signup!" %>
 <% end %>
