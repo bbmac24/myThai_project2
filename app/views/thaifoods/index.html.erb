@@ -14,7 +14,7 @@
   <tbody>
     <% @thaifoods.each do |i| %>
     <tr>
-       <td><%= image_tag i.photo.url(:small), alt: "#{i.dish.downcase}image", width: '100' %></td>   
+      <td><%= image_tag i.photo.url(:small), alt: "#{i.dish.downcase}image", width: '100' %></td>   
       <td><%= i.dish.downcase %></td>
       <td><%= i.location %> </td>
       <td><%= i.restaurant %></td>

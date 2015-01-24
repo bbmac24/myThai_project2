@@ -8,6 +8,7 @@ class User
   field :username, type: String
   field :password_digest, type: String
   field :tagline, type: String 
+  mount_uploader :photo, OurImageUploader
 
   validates :email, uniqueness: true
   validates :username, uniqueness: true

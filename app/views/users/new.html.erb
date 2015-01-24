@@ -2,7 +2,6 @@ Sign Up Page!
 
 <h1>..awesome food ahead!</h1>
 
-<%= @user.errors.inspect %>
 <%= form_for(@user) do |f|%>
 
   Email: <%= f.text_field :email %><br>
@@ -13,6 +12,11 @@ Sign Up Page!
   Please confirm your password:
     <%= f.password_field :password_confirmation %> <br>
   Your Inner ThaiFood Shoutout!: <%= f.text_field :tagline %><br> 
+
+  <div class='form-group'>
+  	Please upload your profile picture: 
+    <%= f.file_field :photo %>
   <%= f.submit "Signup!" %>
+  </div>
 
 <% end %>
