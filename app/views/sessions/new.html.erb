@@ -1,16 +1,38 @@
+<div class="container-fluid"> 
+	<div class="row">
+		<div class="col-md-1"></div>
+			<div class="col-md-9">
+				<h1 id="loginready"> Ready to indulge? </h1>
+				 
+						<%= form_for :user, url: '/login' do |f| %>
+							<form class="form-inline">
+								<div form="form-control">
+									<p class="headline">
+									Email: 
+									<%= f.text_field :email, class: "form-control" %>
+									Password: 
+									<%= f.password_field :password, class: "form-control" %>
+									<br>
+						
+									<%= f.submit "Login!", class: 'form-control btn btn-primary' %>
+									</p>
+								</div>
+							</form>
+						<% end %>
+				<hr>
 
-<h1> Login Page</h1> 
+			<p> 
+				<img src="<%= asset_path('loginfood1.jpg') %>" alt="myThai" class="img-thumbnail">
+				 <img src="<%= asset_path('loginfood2.jpg') %>" alt="myThai" class="img-thumbnail"> 
+				 <img src="<%= asset_path('loginfood3.jpg') %>" alt="myThai" class="img-thumbnail">
+			</p>
+			 
+			<p class="logincomment">
+					...  your best Thai dish awaits you!</p>	
+			<br>
+			<br> 
+			<hr> 
 
-
-
-<%= form_for :user, url: '/login' do |f| %>
-	
-	Email: 
-	<%= f.text_field :email %>
-	Password: 
-	<%= f.password_field :password %>
-
-
-	<%= f.submit "Login!" %>
-
-<% end  %>
+		</div> 
+	</div>
+</div>

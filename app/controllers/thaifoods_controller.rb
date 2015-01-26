@@ -37,6 +37,10 @@ class ThaifoodsController < ApplicationController
     end
   end
 
+  # def updateRating
+  #   Thaifood.find(params[:id])
+  #    rating + 
+
   def destroy
     @thaifood = Thaifood.find(params[:id])
     @thaifood.destroy
@@ -46,6 +50,6 @@ class ThaifoodsController < ApplicationController
 private
 
   def thaifoods_params
-    params.require(:thaifood).permit(:dish, :location, :restaurant, :price_per_dish, :photo)
+    params.require(:thaifood).permit(:dish, :location, :restaurant, :price_per_dish, :photo, :rating)
   end
 end

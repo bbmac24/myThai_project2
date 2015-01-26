@@ -1,29 +1,45 @@
-<h4><%= link_to 'Add a New Dish!', new_thaifood_path %></h4>
+<div class="container-fluid"> 
 
-<table>
+  <hr>
+    <h4><%= link_to 'Add a New Dish!', new_thaifood_path %></h4>
 
-  <thead>
-    <th>Dish</th>
-    <th>Location</th>
-    <th>Restaurant</th>
-    <th>Dish Price</th>
-  </thead>
-  
-  <% if @thaifoods  %>
+    <table class="table table-hover table-bordered table-condensed">
 
-  <tbody>
-    <% @thaifoods.each do |i| %>
-    <tr>
-      <td><%= image_tag i.photo.url(:small), alt: "#{i.dish.downcase}image", width: '100' %></td>   
-      <td><%= i.dish.downcase %></td>
-      <td><%= i.location %> </td>
-      <td><%= i.restaurant %></td>
-      <td>$<%= i.price_per_dish %></td>
-      <td><%= link_to 'Edit', edit_thaifood_path(i) %> | <%= button_to 'X', i, method: :delete %> </td>
-      <td><%= link_to "Comment this!", i %></td>
-      <small><%= "Posted: #{i.date_published}" if i.created_at %></small>
-     </tr>
-    <% end %>
-    <% end %>
-  </tbody>
-</table> 
+        <thead>
+          <th>Picture</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Restaurant</th>
+          <th>Price</th>
+          <th>Edit & Delete</th>
+          <th>Comment</th>
+          <th>Timestamps</th>
+          <th>RATING!</th>
+          <th>#</th>
+        </thead>
+        
+        <% if @thaifoods  %>
+
+        <tbody>
+          <% @thaifoods.each do |i| %>
+          <tr>
+            <td><%= image_tag i.photo.url(:small), alt: "#{i.dish.downcase}image", width: '100' %></td>   
+            <td><%= i.dish.downcase %></td>
+            <td><%= i.location %> </td>
+            <td><%= i.restaurant %></td>
+            <td>$<%= i.price_per_dish %></td>
+            <td><%= link_to 'Edit', edit_thaifood_path(i), class:'btn btn-default btn-sm right' %><%= button_to 'DELETE', i, method: :delete %> </td>
+            <td><%= link_to "Comment this!", i %></td>
+            <td><%= "#{i.date_published}" if i.created_at %></td>
+              <td> <%= form_for i do |x| %>  
+                Your dish rating! <%= x.select :rating, options_for_select([ "1", "2", "3", "4", "5"]) %>
+               <%= x.submit 'Your Rating', class: 'form-control btn btn-success'  %> </td>
+               <td> <%= i.rating %> </td>
+            <% end %>
+           </tr>
+            <% end %>
+            <% end %>
+        </tbody>
+    </table> 
+</div> 
+

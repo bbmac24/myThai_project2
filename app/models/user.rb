@@ -14,7 +14,9 @@ class User
   validates :username, uniqueness: true
   validates :password, confirmation: true
   validates :tagline, uniqueness: { case_sensitve: false}
-  has_many :comments  
+  
+  has_many :comments 
+  has_many :ratings  
 
   has_secure_password
 end

@@ -2,13 +2,197 @@
 @import "bootstrap";
 
 body {
-	background-color: white;
-	// font-family: 'Shadow Into Light', cursive;
+	font-family: 'Paytone One', sans-serif;
+   background-color: rgb(225,207,194);  
+}
+
+.col-md-2 {
+   background-color: rgb(243,243,239);
+   height: 700px;
+   color: #5bc0de; 
+   color: rgb(237,107,150); 
+   text-align: center;
+   font-size: 35px;
+ }
+
+.col-md-10 {
+   background-color: rgb(225,207,194);  
+   height: 700px; 
+   box-shadow: -3px 0px 10px #888888; 
+}
+
+.navbar-default {
+   background-color: rgb(30,9,3); 
+}
+
+.floatright {
+   float: right; 
+}
+
+.jumbotron {
+   background-color: rgb(253,245,214);
+   height: 510px; 
+}
+
+.pos_fixed {
+   position: fixed; 
+   font-size: 18px;
 }
 
 th {
-	width: 200px
+   font-style: bold;
 }
+
+.indexfont {
+   font-size: 80px; 
+}
+
+.floatright {
+   float: right; 
+}
+
+span {
+   color: rgb(237,107,150); 
+}
+
+.table-bordered {
+   color: black; 
+}
+
 .form-control {
 	width: 200px
 }
+
+small {
+   float: right; 
+   margin: 5px; 
+   font-family: arial; 
+   font-size: 11px;
+   font-weight: bold; 
+   position: relative;
+   bottom: 20px;
+   color: rgb(121,22,62); 
+   bottom: 45px;    
+}
+
+#loginready {
+    color: rgb(121,22,62);   
+}
+
+.headline {
+   color: black; 
+}
+
+.logincomment {
+   font-size: 30px; 
+   float: right; 
+   right: 20px; 
+   color: rgb(121,22,62); 
+}
+
+.shoutoutright {
+   float: right; 
+   position: relative;
+   bottom: 450px; 
+   right: 200px;
+   color: rgb(121,22,62); 
+   text-align: right;
+}
+
+hr {
+   clear: both;
+}
+
+textarea.comment {
+   height: 150px !important; 
+   width: 250px;  
+}
+
+.signuppix {
+   position: relative; 
+   float: right; 
+   left: 60px;
+   bottom: 250px;
+}
+
+.signupshout {
+   position: relative;
+   font-size: 30px;
+   color: rgb(121,22,62); 
+   bottom: 70px; 
+   left: 330px; 
+}
+
+h4 {
+   text-align: center; 
+}
+
+.comments {
+   font-family: arial; 
+   text-align: left; 
+   font-size: 20px;
+   font-weight: bold;
+   color: red;   
+}
+
+th {
+   font-family: arial; 
+   color: white; 
+   font-size: 15px; 
+   font-weight: bold; 
+   background-color: rgb(121,22,62);
+   border: 1px solid red; 
+}
+
+tr {
+   color: black; 
+}
+
+td {
+   color: black; 
+   font-family: arial;
+   font-size: 15px; 
+   font-weight: bold;
+
+}
+
+.table-hover {
+  color: black; 
+  border: 1.5px solid black;
+}
+
+table {
+   border: 3px solid black; 
+}
+
+.backgright {
+   float: right; 
+}
+
+.combox {
+   width: 450px; 
+}
+
+.comdes {
+   font-size: 13px;
+   color: rgb(121,22,62);
+   font-family: arial; 
+   font-weight: bold;
+   float: left; 
+}
+
+.comright {
+   font-size: 13px;
+   color: rgb(121,22,62);
+   font-family: arial; 
+   font-weight: bold; 
+   float: right; 
+}
+
+.timeright {
+   font-size: 20px; 
+   text-align: right; 
+   font-family: arial; 
+
+}
+

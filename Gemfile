@@ -37,6 +37,8 @@ gem 'fog'
 gem 'mini_magick'
 gem 'figaro'
 
+gem 'gmaps4rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

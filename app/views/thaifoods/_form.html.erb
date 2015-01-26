@@ -1,24 +1,28 @@
-<%= form_for @thaifood do |f| %>
-  <div class='form-group'>
-    Name
-    <%= f.text_field :dish, class: 'form-control' %>
-  </div>
-  <div class='form-group'>
-    Location: 
-    <%= f.text_field :location, class: 'form-control' %>
-  </div>
-  <div class='form-group'>
-    Restaurant: 
-    <%= f.text_field :restaurant, class: 'form-control' %>
-  </div>
-  <div class='form-group'>
-    Unit Price $
-    <%= f.number_field :price_per_dish, :step => 0.01, class: 'form-control' %>
-  </div>
-  <div class='form-group'>
-    <%= f.file_field :photo %>
+<div class="container-fluid"> 
+  <div class="row">
+    <div class="col-md-1"></div>
+      <div class="col-md-9">
 
-  <div class='form-group'>
-    <%= f.submit 'Add Your ThaiDish!', class: 'form-control btn btn-primary' %>
-  </div>
-<% end %>
+            <h1 id="loginready"> Add your dish! </h1>
+
+                <%= form_for @thaifood do |f| %>
+                  Dish Name: 
+                  <%= f.text_field :dish, class: 'form-control' %>
+                  Location: 
+                  <%= f.text_field :location, class: 'form-control' %>
+                  Restaurant: 
+                  <%= f.text_field :restaurant, class: 'form-control' %>
+                  Unit Price $
+                  <%= f.number_field :price_per_dish, :step => 0.01, class: 'form-control' %>
+                  <br> 
+                  
+                  Add your Thai Dish: 
+                  <%= f.file_field :photo %><br>
+
+                  <%= f.submit 'Add/Edit Your ThaiDish!', class: 'form-control btn btn-primary' %>
+              
+          <% end %>
+
+        </div>
+    </div>
+</div> 

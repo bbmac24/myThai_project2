@@ -5,29 +5,59 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
- <!--  <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'> -->
-</head>
+
+<link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+<!-- 
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCwg6f8ULzlYlD7MfGJdPW6eINlDa_6vUA" %> -->
 <body>
+  <header class="navbar-default">
+    <div class="container">
+      <nav role="navigation">
+       <div class="navbar-header">
+            <a class="navbar-brand" href="thaifoods">
+              <img src="<%= asset_path('mythai3.svg') %>" alt="myThai">
+            </a>
+        </div>
+        <p class="navbar-text">
+          " ...satisfying all your THAI cravings" </P>
 
-<div class="container-fluid">
-<div class='pull-right'>
-    <% if current_user %>
-      <%= image_tag current_user.photo.url(:profile) %>
-      <%= current_user.username %> | "<%= current_user.tagline %> "| <%= link_to "Logout", logout_path %>
-    <% else %>
-      <%= link_to "Login", login_path %> | <%= link_to "Signup", signup_path %>
-    <% end %>
+              <ul class="nav navbar-nav navbar-right">
+                <p class="navbar-text">
+                  <% if current_user %>
+                  <%= current_user.username %>  <%= link_to "Logout", logout_path %><% else %>
+                  <%= link_to "Login", login_path %> - <%= link_to "Signup", signup_path %>
+                  <% end %> 
+                </p>
+              </ul>
+        </div>
+      </nav> 
+    </div>
+  </header>
+  <div class="container-fluid"> 
+      <div class="row">
+          <div class="col-md-2">
+            <br>
+            <br>
+              <p class="img-thumbnail">
+              <% if current_user %>
+              <%= image_tag current_user.photo.url(:medium), width: '150' %>
+              </p>
+              <br>
+              <br>
+              <ins> "<%= current_user.tagline %>"</ins>
+              <hr>
+              <% end %> 
+            <div class="pos_fixed">
+              <img src="<%= asset_path('mythai4.svg') %>" alt="myThai">
+              <p>" ..do you myThai?"</p>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <%= yield %>
+          </div>
+      </div>
+    </div>
   </div>
 
-<!-- look up "clear both" -->
-
-<div class="row">
-  <div class="col-md-3">user info goes here</div>
-  <div class="col-md-9">
-    <%= yield %>
-  </div>
-</div>
-
-</div>
 </body>
 </html>
