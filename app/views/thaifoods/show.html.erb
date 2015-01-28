@@ -3,24 +3,32 @@
       <div class="col-md-1"></div>
           <div class="col-md-9">
           
-            <br> 
             <div class="backright"> 
 
-              <p> <%= link_to "Back", thaifoods_path, class:'btn btn-default btn-sm left'  %> </p> 
+              <p class="backbutton"> <%= link_to "Back", thaifoods_path, class:'btn btn-default btn-sm left'  %> </p> 
+
                 <p class="comments">C O M M E N T S</p></div>
               <hr>
+
+                <div class="picturetag">
                   <%= image_tag @thaifood.photo.url(:medium), alt: "#{@thaifood.dish.downcase}image", width: '450' %>
 
-                  <div class="combox">
-                   <p class="comdes"><%= @thaifood.dish %> @
-                  <%= @thaifood.restaurant %></p>
-                  <p class="comright"><%= @thaifood.location %>  - RATING: 
-                  <%= @thaifood.rating %></P> 
-                   </div> 
+                    <div class="comdes"> 
+                    <p><mark><%= @thaifood.dish %> @
+                    <%= @thaifood.restaurant %></mark></p>
+                    <br>
+                    <br>
+                    <p> 
+                    <mark> <%= @thaifood.location %></p><p>
+                    <br><br> <ins>- RATING: <%= @thaifood.rating %></mark></ins></p>
+                    </div>
+                   
+              </div> 
+              
               <hr> 
             
-              <% @thaifood.comments.each do |comment| %>
-                <%= comment.body %> 
+                 <% @thaifood.comments.each do |comment| %>
+                 <%= comment.body %> 
 
                 <p class="timeright">
                   <%=  %><small><%= comment.created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p") if comment.created_at %> <%= comment.user.username if comment.user %> </small>
@@ -29,8 +37,8 @@
                  <% end %>
 
               <h5>Add a comment:</h5>
-              <%= form_for [@thaifood, @new_comment] do |f| %> 
-                <%= f.text_area :body, class:'form-control' %> 
+              <%= form_for [@thaifood, @new_comment] do |f| %> <p class="textarea2">
+                <%= f.text_area :body, class:'form-control wide-comment' %> </p>
                 <%= f.submit "Submit", class:'btn btn-sm btn-primary comment' %><small> <%= current_user.username %></small>
                 <% end %>
         </div>
